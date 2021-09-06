@@ -102,7 +102,7 @@ export function getAppLocator(networkType) {
 
 export function getLocalChainId() {
   // Default to 1337 as used by most local development environments.
-  return getLocalSetting(LOCAL_CHAIN_ID) || 1337
+  return Number(getLocalSetting(LOCAL_CHAIN_ID)) || 1337
 }
 
 export function getDefaultEthNode(networkType) {

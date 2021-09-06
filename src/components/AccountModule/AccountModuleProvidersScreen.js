@@ -88,8 +88,8 @@ function AccountModuleProvidersScreen({ onActivate }) {
           padding: 0 ${2 * GU}px ${1 * GU}px;
         `}
       >
-        <Link href="https://ethereum.org/wallets/" css="text-decoration: none">
-          Don’t have an Ethereum account?
+        <Link href="https://wallet.avax.network/" css="text-decoration: none">
+          Don’t have an Avalanche account?
         </Link>
       </div>
     </div>

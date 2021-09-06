@@ -81,6 +81,25 @@ export const networkConfigs = {
       live: false,
     },
   },
+  [KNOWN_CHAINS.get(43112).type]: {
+    enableMigrateBanner: true,
+    addresses: {
+      ensRegistry: localEnsRegistryAddress,
+      governExecutorProxy: null,
+    },
+    nodes: {
+      defaultEth: 'ws://localhost:8545',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      // Local development environments by convention use
+      // a chainId of value 1337, but for the sake of configuration
+      // we expose a way to change this value.
+      chainId: 43112,
+      ...KNOWN_CHAINS.get(43112),
+      live: false,
+    },
+  },
   // xDai is an experimental chain in the Aragon Client. It's possible
   // and expected that a few things will break.
   [KNOWN_CHAINS.get(100).type]: {

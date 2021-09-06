@@ -9,6 +9,7 @@ import {
 } from 'use-wallet'
 import { getWeb3, filterBalanceValue } from './web3-utils'
 import { useWalletConnectors } from './ethereum-providers/connectors'
+import { getLocalChainId } from './local-settings'
 
 export const WALLET_STATUS = Object.freeze({
   providers: 'providers',
@@ -18,8 +19,8 @@ export const WALLET_STATUS = Object.freeze({
   error: 'error',
 })
 
-// default network is mainnet if user is not conncted
-const NETWORK_TYPE_DEFAULT = KNOWN_CHAINS.get(1)?.type
+// default network is passed via env variable if user is not conncted
+const NETWORK_TYPE_DEFAULT = KNOWN_CHAINS.get(getLocalChainId())?.type
 
 const WalletContext = React.createContext()
 
