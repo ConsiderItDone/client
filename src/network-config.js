@@ -100,6 +100,44 @@ export const networkConfigs = {
       live: false,
     },
   },
+  [KNOWN_CHAINS.get(43113).type]: {
+    enableMigrateBanner: true,
+    addresses: {
+      ensRegistry: localEnsRegistryAddress,
+      governExecutorProxy: null,
+    },
+    nodes: {
+      defaultEth: 'ws://api.avax-test.network/ext/bc/C/ws',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      // Local development environments by convention use
+      // a chainId of value 1337, but for the sake of configuration
+      // we expose a way to change this value.
+      chainId: 43113,
+      ...KNOWN_CHAINS.get(43113),
+      live: false,
+    },
+  },
+  [KNOWN_CHAINS.get(43114).type]: {
+    enableMigrateBanner: true,
+    addresses: {
+      ensRegistry: localEnsRegistryAddress,
+      governExecutorProxy: null,
+    },
+    nodes: {
+      defaultEth: 'ws://api.avax.network/ext/bc/C/ws',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      // Local development environments by convention use
+      // a chainId of value 1337, but for the sake of configuration
+      // we expose a way to change this value.
+      chainId: 43114,
+      ...KNOWN_CHAINS.get(43114),
+      live: false,
+    },
+  },
   // xDai is an experimental chain in the Aragon Client. It's possible
   // and expected that a few things will break.
   [KNOWN_CHAINS.get(100).type]: {
