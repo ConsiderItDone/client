@@ -9,44 +9,43 @@ const DAI_RINKEBY_TOKEN_ADDRESS = '0x0527e400502d0cb4f214dd0d2f2a323fc88ff924'
 // TODO stop exposing data object [vr 17-09-2021]
 // cconnectGraphEndpoint is https://github.com/aragon/connect/tree/master/packages/connect-thegraph
 export const networkConfigs = {
-  [chains.getChainInformation(1).type]: {
+  [chains.getChainInformation(43114).type]: {
     isActive: true,
     addresses: {
       ensRegistry:
         localEnsRegistryAddress || '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e',
-      dai: DAI_MAINNET_TOKEN_ADDRESS,
-      governExecutorProxy: '0x2ac40310167fb00afa3c0bb5953c707db155afac',
+      dai: null,
+      governExecutorProxy: null,
     },
     nodes: {
       defaultEth: 'wss://mainnet.eth.aragon.network/ws',
     },
-    connectGraphEndpoint:
-      'https://api.thegraph.com/subgraphs/name/aragon/aragon-mainnet',
+    connectGraphEndpoint: null,
     settings: {
-      chainId: 1,
+      chainId: 43114,
       testnet: false,
-      ...chains.getChainInformation(1),
+      ...chains.getChainInformation(43114),
       live: true,
     },
   },
-  [chains.getChainInformation(3).type]: {
-    isActive: false,
+  [chains.getChainInformation(43113).type]: {
+    isActive: true,
     addresses: {
       ensRegistry:
         localEnsRegistryAddress || '0x6afe2cacee211ea9179992f89dc61ff25c61e923',
       governExecutorProxy: null,
     },
     nodes: {
-      defaultEth: 'wss://ropsten.eth.aragon.network/ws',
+      defaultEth: null,
     },
     connectGraphEndpoint: null,
     settings: {
-      chainId: 3,
+      chainId: 43113,
       testnet: true,
-      ...chains.getChainInformation(3),
+      ...chains.getChainInformation(43113),
     },
   },
-  [chains.getChainInformation(4).type]: {
+  [chains.getChainInformation(43112).type]: {
     isActive: true,
     addresses: {
       ensRegistry:
@@ -55,19 +54,17 @@ export const networkConfigs = {
       governExecutorProxy: '0x0451533f685fe028c439821b7502e4cf63b4c32f',
     },
     nodes: {
-      defaultEth: 'wss://rinkeby.eth.aragon.network/ws',
+      defaultEth: null,
     },
-    connectGraphEndpoint:
-      'https://api.thegraph.com/subgraphs/name/aragon/aragon-rinkeby',
+    connectGraphEndpoint: null,
     settings: {
-      chainId: 4,
-      testnet: true,
-      ...chains.getChainInformation(4), // as returned by web3.eth.net.getNetworkType()
-      live: true,
+      chainId: 43112,
+      testnet: 43112,
+      ...chains.getChainInformation(43112),
     },
   },
   [chains.getChainInformation(1337).type]: {
-    isActive: false,
+    isActive: true,
     addresses: {
       ensRegistry: localEnsRegistryAddress,
       governExecutorProxy: null,
@@ -106,7 +103,7 @@ export const networkConfigs = {
     },
   },
   [chains.getChainInformation(137).type]: {
-    isActive: true,
+    isActive: false,
     addresses: {
       ensRegistry:
         localEnsRegistryAddress || '0x3c70a0190d09f34519e6e218364451add21b7d4b',
@@ -145,7 +142,7 @@ export const networkConfigs = {
     },
   },
   [chains.getChainInformation(80001).type]: {
-    isActive: true,
+    isActive: false,
     addresses: {
       ensRegistry:
         localEnsRegistryAddress || '0x431f0eed904590b176f9ff8c36a1c4ff0ee9b982',
@@ -183,7 +180,7 @@ export const networkConfigs = {
     },
   },
   [chains.getChainInformation(97).type]: {
-    isActive: true,
+    isActive: false,
     addresses: {
       ensRegistry:
         localEnsRegistryAddress || '0x843ddfab8406e752d03fa75dbb275070f368658d',
@@ -203,7 +200,7 @@ export const networkConfigs = {
   },
 
   [chains.getChainInformation(1666600000).type]: {
-    isActive: true,
+    isActive: false,
     enableMigrateBanner: false,
     addresses: {
       ensRegistry:
@@ -245,7 +242,7 @@ export const networkConfigs = {
   },
 
   [chains.getChainInformation(1666700000).type]: {
-    isActive: true,
+    isActive: false,
     enableMigrateBanner: false,
     addresses: {
       ensRegistry:
