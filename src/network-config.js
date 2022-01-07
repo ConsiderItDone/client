@@ -54,7 +54,7 @@ export const networkConfigs = {
       governExecutorProxy: '0x0451533f685fe028c439821b7502e4cf63b4c32f',
     },
     nodes: {
-      defaultEth: null,
+      defaultEth: 'ws://127.0.0.1:9650/ext/bc/C/ws',
     },
     connectGraphEndpoint: null,
     settings: {
@@ -80,6 +80,11 @@ export const networkConfigs = {
       chainId: 1337,
       testnet: true,
       ...chains.getChainInformation(1337),
+      nativeCurrency: {
+        name: 'Ether',
+        symbol: 'ETH',
+        decimals: 18,
+      },
       live: false,
     },
   },
