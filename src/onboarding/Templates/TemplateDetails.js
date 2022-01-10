@@ -22,6 +22,8 @@ import { trackEvent, events } from '../../analytics'
 import { useWallet } from '../../contexts/wallet'
 
 function TemplateDetails({ template, visible, onUse, onClose }) {
+  console.log('TemplateDetails', template)
+
   const theme = useTheme()
   const { networkName } = useWallet()
   const { above, below, width } = useViewport()

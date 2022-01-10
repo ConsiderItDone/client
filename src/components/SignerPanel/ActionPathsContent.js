@@ -142,6 +142,7 @@ class ActionPathsContent extends React.Component {
     )
   }
   getPathRadioItem(path) {
+    console.log('getPathRadioItem', path)
     // Slice off the intention (last transaction in the path)
     path = path.slice(0, path.length - 1)
 

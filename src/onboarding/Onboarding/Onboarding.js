@@ -94,6 +94,7 @@ function Onboarding({ web3 }) {
   // Update the requirements live if an error is being displayed,
   // on click otherwise (see handleCreate).
   useEffect(() => {
+    console.log(chains.getChainInformation(chainId))
     const requirementsErrorUpdated = validateCreationRequirements(
       account,
       balance,
@@ -183,8 +184,9 @@ function Onboarding({ web3 }) {
         embeddedTemplates.map(async template => {
           let repoAddress
           try {
+            console.log('embeddedTemplates loading', networkType, template.id)
             repoAddress = await resolveEnsDomain(networkType, web3, template.id)
-          } catch (_) {}
+          } catch (err) {console.log(err)}
 
           return repoAddress
             ? {
@@ -200,9 +202,9 @@ function Onboarding({ web3 }) {
       )
         .then(templatesWithRepoAddress => {
           if (!cancelled) {
-            const availableTemplates = templatesWithRepoAddress.filter(
-              item => item.status === TEMPLATE_AVAILABLE
-            )
+            // const availableTemplates = templatesWithRepoAddress.filter(
+            //   item => item.status === TEMPLATE_AVAILABLE
+            // )
             setTemplates(availableTemplates)
           }
           return null

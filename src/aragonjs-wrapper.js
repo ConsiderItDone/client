@@ -99,6 +99,7 @@ export const pollConnectivity = pollEvery((providers = [], onConnectivity) => {
 export const resolveEnsDomain = async (networkType, provider, domain) => {
   try {
     const registryAddress = getNetworkConfig(networkType).addresses.ensRegistry
+    console.log('registry address', registryAddress)
     return await ensResolve(domain, {
       provider,
       registryAddress,
@@ -254,6 +255,8 @@ const initWrapper = async (
 ) => {
   const ipfsConf = { gateway: getIpfsGateway() }
   const isDomain = isValidEnsName(dao)
+  console.log('aragon wrapper dao', isDomain, dao, networkType)
+
   const daoAddress = isDomain
     ? await resolveEnsDomain(networkType, provider, dao)
     : dao
@@ -276,6 +279,7 @@ const initWrapper = async (
 
   onDaoAddress(daoData)
 
+  console.log('aragon wrapper dao address', daoAddress)
   const wrapper = new Aragon(daoAddress, {
     provider,
     // Let web3 provider handle gas estimations on mainnet
@@ -308,6 +312,7 @@ const initWrapper = async (
       guiStyle,
     })
   } catch (err) {
+    console.log('wrapper init errror', err)
     if (err.message === 'Provided daoAddress is not a DAO') {
       throw new DAONotFound(dao)
     }

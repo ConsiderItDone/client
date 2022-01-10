@@ -32,6 +32,7 @@ function Templates({ onUse, templates }) {
   )
 
   const selectedTemplate = templates[templateDetailsIndex]
+  console.log('selectedTemplate', selectedTemplate, templateDetailsIndex, templates)
 
   return (
     <div

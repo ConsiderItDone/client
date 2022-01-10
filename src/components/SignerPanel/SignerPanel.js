@@ -160,6 +160,8 @@ class SignerPanel extends React.PureComponent {
     const installed = apps.some(
       ({ proxyAddress }) => proxyAddress === transaction.to
     )
+    
+    console.log('transactionIntent', targetIntent, name)
 
     return {
       annotatedDescription,
