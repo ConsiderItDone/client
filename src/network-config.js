@@ -54,13 +54,14 @@ export const networkConfigs = {
       governExecutorProxy: '0x0451533f685fe028c439821b7502e4cf63b4c32f',
     },
     nodes: {
-      defaultEth: 'ws://127.0.0.1:9650/ext/bc/C/ws',
+      defaultEth: 'ws://127.0.0.1:11519/ext/bc/C/ws',
     },
     connectGraphEndpoint: null,
     settings: {
       chainId: 43112,
       testnet: 43112,
       ...chains.getChainInformation(43112),
+      live: false,
     },
   },
   [chains.getChainInformation(1337).type]: {

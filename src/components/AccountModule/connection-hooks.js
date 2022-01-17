@@ -79,11 +79,15 @@ export function useWalletConnectionDetails(
     connectionMessageLong: `Connected to ${walletNetworkFullName} Network`,
     connectionColor: theme.positive,
   }
+  
+  console.log('clientListening && !networkSettings.live', clientListening, networkSettings)
 
   if (clientListening && !networkSettings.live) {
     return defaultOkConnectionDetails
   }
-
+  console.log('no connection', !clientListening, !walletListening, !clientOnline, !walletOnline, networkSlowdown, clientSyncDelay, 
+      clientSyncDelay >= MAX_PROVIDER_SYNC_DELAY, walletSyncDelay,
+      walletSyncDelay >= MAX_PROVIDER_SYNC_DELAY)
   if (
     !clientListening ||
     !walletListening ||
@@ -184,6 +188,7 @@ export function useSyncInfo(wantedWeb3 = 'default') {
         request: async () => {
           if (!cancel) {
             return getLatestBlockTimestamp(selectedWeb3).catch(err => {
+              console.log('getLatestBlockTimestamp', err, cancel);
               if (!cancel) {
                 console.error('Get latest block timestamp', err)
                 setIsListening(false)
@@ -194,6 +199,8 @@ export function useSyncInfo(wantedWeb3 = 'default') {
           }
         },
         onResult: timestamp => {
+          console.log('getLatestBlockTimestamp result', timestamp, cancel);
+
           if (!cancel) {
             const now = new Date()
             const blockDiff = now - timestamp
@@ -206,6 +213,7 @@ export function useSyncInfo(wantedWeb3 = 'default') {
                 : STATUS_CONNECTION_HEALTHY
             setConnectionStatus(connectionHealth)
             setSyncDelay(latestBlockDifference)
+            console.log('connectionHealth', connectionHealth, connectionHealth === STATUS_CONNECTION_HEALTHY)
             if (connectionHealth === STATUS_CONNECTION_HEALTHY) {
               setIsListening(true)
             }
