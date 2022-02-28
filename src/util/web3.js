@@ -245,6 +245,7 @@ export function getWeb3(provider) {
 export function getWeb3Provider(networkType) {
   const host = getEthNode(networkType)
   const options = getOptions(networkType)
+  // console.log('getWeb3Provider', host, options)
 
   if (!options) {
     return new Web3.providers.WebsocketProvider(host)

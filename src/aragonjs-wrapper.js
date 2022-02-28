@@ -280,6 +280,7 @@ const initWrapper = async (
   onDaoAddress(daoData)
 
   console.log('aragon wrapper dao address', daoAddress)
+  console.log('ensregistry1', networkType, getNetworkConfig(networkType), getNetworkConfig(networkType).addresses.ensRegistry, 22)
   const wrapper = new Aragon(daoAddress, {
     provider,
     // Let web3 provider handle gas estimations on mainnet

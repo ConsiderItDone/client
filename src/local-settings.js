@@ -87,6 +87,7 @@ function getEnvSetting(confKey) {
 
 // Get a local setting: from the local storage if available, or the env vars.
 function getLocalSetting(confKey, networkType) {
+  console.log('getLocalSetting', confKey, networkType, getLocalStorageSetting(confKey, networkType), getEnvSetting(confKey))
   return getLocalStorageSetting(confKey, networkType) || getEnvSetting(confKey)
 }
 

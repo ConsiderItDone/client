@@ -80,7 +80,7 @@ export function useWalletConnectionDetails(
     connectionColor: theme.positive,
   }
   
-  console.log('clientListening && !networkSettings.live', clientListening, networkSettings)
+  // console.log('clientListening && !networkSettings.live', clientListening, networkSettings)
 
   if (clientListening && !networkSettings.live) {
     return defaultOkConnectionDetails

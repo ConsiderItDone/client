@@ -30,6 +30,7 @@ const LOADING_STEPS_EXTERNAL = {
 }
 
 function getLoadingSteps(instanceId) {
+  // console.log('getLoadingSteps', instanceId)
   // Organization app
   if (instanceId === 'organization') {
     return LOADING_STEPS_ORGANIZATION
