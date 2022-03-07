@@ -178,10 +178,9 @@
     graphql "^15.5.0"
     graphql-request "^3.4.0"
 
-"@aragon/wrapper@^5.5.1":
+"@aragon/wrapper@https://gitpkg.now.sh/ConsiderItDone/aragon.js/packages/aragon-wrapper?avalanche":
   version "5.5.1"
-  resolved "https://registry.yarnpkg.com/@aragon/wrapper/-/wrapper-5.5.1.tgz#284961cf9c9e8a84504364594063e8b41057154e"
-  integrity sha512-CFRNG61cxjUmVUeKRdkR5Qi7LUjEyMYduj1R8VXtxF4aY89G3KgtmpO1OXdKgLlwq+ZrOVkF3j34yhY8MzE3gw==
+  resolved "https://gitpkg.now.sh/ConsiderItDone/aragon.js/packages/aragon-wrapper?avalanche#96b8e4a4251ddc5b070dcd82998cc3ccd4f52071"
   dependencies:
     "@aragon/os" "^4.2.1"
     "@aragon/rpc-messenger" "^2.0.0"
